@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/widget_background">
+
+    <!-- Верхняя строчка: счётчик дней -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/widget_counter_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Our Space • Вместе"
+            android:textColor="#8C90A4"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="❤️"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- Основной контент: эмодзи и текст записки -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/widget_emoji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="💌"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/widget_note_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Нажмите, чтобы открыть Our Space"
+            android:textColor="#232533"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:maxLines="3"
+            android:ellipsize="end" />
+    </LinearLayout>
+
+    <!-- Нижняя плашка -->
+    <TextView
+        android:id="@+id/widget_sender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Синхронизировано"
+        android:textColor="#B0B3C3"
+        android:textSize="10sp" />
+</LinearLayout>

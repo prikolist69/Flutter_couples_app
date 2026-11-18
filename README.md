@@ -1,17 +1,27 @@
 # couples_app
 
-A new Flutter project.
+Мобильное приложение для пар на Flutter. Делал как пет-проект для практики работы с клиент-серверной архитектурой, кастомными анимациями и синхронизацией данных в реальном времени через Supabase.
 
-## Getting Started
+Суть приложения — общее пространство для двоих, где партнеры связывают свои устройства по 6-значному коду и могут делиться текущим статусом, взаимодействовать через общий интерактивный виджет и вести совместные списки.
 
-This project is a starting point for a Flutter application.
+## Текущий статус проекта (WIP)
 
-A few resources to get you started if this is your first Flutter project:
+Проект находится в стадии активной разработки (Work in Progress). Базовая архитектура, привязка устройств и синхронизация через БД работают, но часть запланированного функционала еще не доделана или временно отключена в интерфейсе:
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- Не все игровые механики и карточки активностей доведены до финальной логики.
+- Система серий (стриков) и смена скинов центрального виджета находятся в процессе доработки.
+- Синхронизация с нативным виджетом рабочего стола (`home_widget`) заложена в проект, но пока не подключена до конца.
+- В некоторых экранах (вишлист, планы) пока базовая реализация без расширенного редактирования.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Стек и библиотеки
+
+- **Flutter / Dart**
+- **Supabase** (`supabase_flutter`) — база данных PostgreSQL и Realtime-подписки (`.stream()`) для мгновенного обновления UI без перезагрузки.
+- **Shared Preferences** — локальное хранение токена сессии, ID пары и роли пользователя.
+- **Анимации и верстка** — стандартные контроллеры анимаций Flutter, `CustomPainter`, `flutter_animate`, шрифты через `google_fonts`.
+
+## Структура проекта
+
+Код разделен на две основные директории внутри `lib/`:
+- `core/` — инициализация Supabase, работа с локальным хранилищем, тема приложения и переиспользуемые кастомные виджеты (сердце, карточки вопросов и записок, анимации частиц).
+- `screens/` — основные экраны приложения, вкладки нижней навигации и модальные окна.
